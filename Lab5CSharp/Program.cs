@@ -22,6 +22,38 @@ internal class Program
 
             switch (choice)
             {
+                case "3":
+                        Edition[] catalog = new Edition[]
+                        {
+                            new Book("Кобзар", "Шевченко", 1840, "Київ"),
+                            new Article("Нові технології", "Мельник", "Науковий світ", 5, 2023),
+                            new ElectronicResource("C# Documentation", "Microsoft", "https://docs.microsoft.com", "Посібник з мови"),
+                            new Book("Захар Беркут", "Франко", 1883, "Львів")
+                        };
+
+                        Console.WriteLine("--- ПОВНИЙ КАТАЛОГ ВИДАНЬ ---");
+                        foreach (var item in catalog)
+                        {
+                            item.Show();
+                        }
+
+                        Console.Write("\nВведіть прізвище автора для пошуку: ");
+                        string searchSurname = Console.ReadLine();
+
+                        Console.WriteLine($"--- РЕЗУЛЬТАТИ ПОШУКУ ДЛЯ: {searchSurname} ---");
+                        bool found = false;
+                        foreach (var item in catalog)
+                        {
+                            if (item.IsSearched(searchSurname))
+                            {
+                                item.Show();
+                                found = true;
+                            }
+                        }
+
+                        if (!found) Console.WriteLine("Видань цього автора не знайдено.");
+                    
+                    break;
                 case "2":
                     Kadry k_person1 = new Kadry("Вільгельм");
                     k_person1.Show();
