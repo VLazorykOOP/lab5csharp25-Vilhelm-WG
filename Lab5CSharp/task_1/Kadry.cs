@@ -8,13 +8,13 @@ public class Kadry
 
     public Kadry(string Name, string Surname, int Age)
     {
-        Name = name;
-        Surname = surname;
-        Age = age;
+        name = Name;
+        surname = Surname;
+        age = Age;
     }
 
     public virtual void Show()
     {
-        Console.WriteLine($"Name: {name}, Surname: {surname}, Age: {age}");
+        Console.WriteLine($"\nName: {name}, Surname: {surname}, Age: {age}");
     }
 }

@@ -3,9 +3,9 @@ namespace User.task_1;
 public class Engineer : Kadry
 {
     private string speciality;
-    private string category;
+    private int category;
     
-    public Engineer(string Name, string Surname, int Age, string Speciality, string Category) : base(Name, Surname, Age)
+    public Engineer(string Name, string Surname, int Age, string Speciality, int Category) : base(Name, Surname, Age)
     {
         speciality = Speciality;
         category = Category;
