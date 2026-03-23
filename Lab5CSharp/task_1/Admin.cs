@@ -1,5 +1,3 @@
-namespace User.task_1;
-
 public class Admin : Kadry
 {
     private string position;

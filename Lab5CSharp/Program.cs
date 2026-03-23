@@ -1,7 +1,17 @@
-﻿using User.task_1;
-
-namespace Lab3CSharp;
+﻿namespace Lab5CSharp.task_4;
 using System;
+
+public struct StateStruct
+{
+    public string Name;
+    public string Capital;
+    public int Population;
+    public double Area;
+    public StateStruct(string n, string c, int p, double a) 
+    { Name = n; Capital = c; Population = p; Area = a; }
+}
+
+public record StateRecord(string Name, string Capital, int Population, double Area);
 
 internal class Program
 {
@@ -11,6 +21,8 @@ internal class Program
         {
             Console.WriteLine();
             Console.WriteLine("Lab 5 - меню");
+            Console.WriteLine("4 - Task 4");
+            Console.WriteLine("3 - Task 3");
             Console.WriteLine("2 - Task 2");
             Console.WriteLine("1 - Task 1");
             Console.WriteLine("0 - Вихід");
@@ -22,6 +34,19 @@ internal class Program
 
             switch (choice)
             {
+                case "4":
+                    Console.WriteLine("Оберіть варіант реалізації:");
+                    Console.WriteLine("1 - Структури, 2 - Кортежі, 3 - Записи");
+                    string? subChoice = Console.ReadLine();
+
+                    switch (subChoice)
+                    {
+                        case "1": Struct.RunStructVariant(); break;
+                        case "2": Tuple.RunTupleVariant(); break;
+                        case "3": Record.RunRecordVariant(); break;
+                    }
+                    break;
+                
                 case "3":
                         Edition[] catalog = new Edition[]
                         {
@@ -54,6 +79,7 @@ internal class Program
                         if (!found) Console.WriteLine("Видань цього автора не знайдено.");
                     
                     break;
+                
                 case "2":
                     Kadry k_person1 = new Kadry("Вільгельм");
                     k_person1.Show();

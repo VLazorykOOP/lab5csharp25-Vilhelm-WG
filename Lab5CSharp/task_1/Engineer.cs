@@ -1,5 +1,3 @@
-namespace User.task_1;
-
 public class Engineer : Kadry
 {
     private string speciality;
