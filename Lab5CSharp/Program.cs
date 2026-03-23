@@ -10,7 +10,7 @@ internal class Program
         while (true)
         {
             Console.WriteLine();
-            Console.WriteLine("Lab 1 - меню");
+            Console.WriteLine("Lab 5 - меню");
             Console.WriteLine("2 - Task 2");
             Console.WriteLine("1 - Task 1");
             Console.WriteLine("0 - Вихід");
@@ -23,6 +23,34 @@ internal class Program
             switch (choice)
             {
                 case "2":
+                    Kadry k_person1 = new Kadry("Вільгельм");
+                    k_person1.Show();
+                    Kadry k_person2 = new Kadry();
+                    k_person2.Show();
+                    Kadry k_person3 = new Kadry("Рудольф", 15);
+                    k_person3.Show();
+
+                    Worker w_person1 = new Worker("Лоріка");
+                    w_person1.Show();
+                    Worker w_person2 = new Worker("Ельфіда", 17);
+                    w_person2.Show();
+                    Worker w_person3 = new Worker();
+                    w_person3.Show();
+                        
+                    Engineer e_person1 = new Engineer("Артур");
+                    e_person1.Show();
+                    Engineer e_person2 = new Engineer("Едмунд", 28);
+                    e_person2.Show();
+                    Engineer e_person3 = new Engineer();
+                    e_person3.Show();
+                        
+                    Admin a_person1 = new Admin("Беатріса");
+                    a_person1.Show();
+                    Admin a_person2 = new Admin("Гертруда", 35);
+                    a_person2.Show();
+                    Admin a_person3 = new Admin();
+                    a_person3.Show();
+                    
                     break;
                 
                 case "1":
@@ -71,7 +99,7 @@ internal class Program
                             }
                         }
 
-                        Console.WriteLine("--- Співробітники, впорядковані за типом ---");
+                        Console.WriteLine($"\n--- Генерація {n} обʼєктів ---");
     
                         // Сортування за іменем класу
                         var sortedStaff = staff.OrderBy(e => e.GetType().Name);
@@ -80,6 +108,7 @@ internal class Program
                         {
                             emp.Show(); // Викличе потрібний метод залежно від реального типу об'єкта
                         }
+                        
                         break;
                 
 
